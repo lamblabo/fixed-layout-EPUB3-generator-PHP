@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+th{
+	text-align: right;
+}
+input[type="text"]{
+	width: 400px;
+}
+select{
+	width: 150px;
+}
+</style>
+</head>
+<body>
+<h1>fixed-layout-EPUB3-generator-PHP</h1>
+<h2>フィックス型EUPB作成ツール - Step.1 書誌情報 <span style="font-size:medium;">© lamblabo</span></h2>
+
+<form action="./genEPUB2.php" method="post">
+<table>
+	<tr><th>タイトル：</th><th><input type="text" name="title"></th></tr>
+	<tr><th>タイトル（カタカナ）：</th><th><input type="text" name="title_kana"></th></tr>
+	<tr><th>著者数（最大5人）：</th><th style="text-align:left;"><select name="creatorNo"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></th></tr>
+	<tr><th>著者1：</th><th><input type="text" name="creator01"></th></tr>
+	<tr><th>著者1（カタカナ）：</th><th><input type="text" name="creator01_kana"></th></tr>
+	<tr><th>著者2：</th><th><input type="text" name="creator02"></th></tr>
+	<tr><th>著者2（カタカナ）：</th><th><input type="text" name="creator02_kana"></th></tr>
+	<tr><th>著者3：</th><th><input type="text" name="creator03"></th></tr>
+	<tr><th>著者3（カタカナ）：</th><th><input type="text" name="creator03_kana"></th></tr>
+	<tr><th>著者4：</th><th><input type="text" name="creator04"></th></tr>
+	<tr><th>著者4（カタカナ）：</th><th><input type="text" name="creator04_kana"></th></tr>
+	<tr><th>著者5：</th><th><input type="text" name="creator05"></th></tr>
+	<tr><th>著者5（カタカナ）：</th><th><input type="text" name="creator05_kana"></th></tr>
+	<tr><th>出版社：</th><th><input type="text" name="publisher"></th></tr>
+	<tr><th>出版社（カタカナ）：</th><th><input type="text" name="publisher_kana"></th></tr>
+	<tr><th>言語：</th><th><input type="text" name="lang" value="ja"></th></tr>
+	<tr><th>ISBN/識別番号：</th><th><input type="text" name="ISBN"></th><th>←変更しないで</th></tr>
+	<tr><th>サイズ（width in px）：</th><th><input type="text" name="width"></th></tr>
+	<tr><th>サイズ（height in px）：</th><th><input type="text" name="height"></th></tr>
+	<tr><th>ページ数（カバー除く）：</th><th><input type="text" name="page"></th></tr>
+	<tr><th>方向：</th><th style="text-align:left;"><select name="direction"><option value="ltr">横組み(左→右)</option><option value="rtl">縦組み(右→左)</option></select></th></tr>
+
+</table>
+	<br><br><input type="submit" value="submit">
+</form> 
+
+<script>
+	document.querySelector('input[name="ISBN"]').value = window.location.href.split('/')[window.location.href.split('/').length-2]
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+th{
+	text-align: center;
+}
+input[type="text"]{
+	width: 400px;
+}
+select{
+	width: 50px;
+}
+input[type="button"]{
+	min-height: 30px;
+}
+</style>
+</head>
+<body>
+<h1>fixed-layout-EPUB3-generator-PHP</h1>
+<h2>フィックス型EUPB作成ツール - Step.2 目次作成 <span style="font-size:medium;">© lamblabo</span></h2>
+
+<form action="./modifyMenu.php" method="post">
+<table>
+	<tr><th>　</th><th>ページ</th></tr>
+	<tr><th>本扉：</th><th><input type="text" name="p_tobira" style="width:75px;"></th></tr>
+	<tr><th>目次：</th><th><input type="text" name="p_mokuji" style="width:75px;"></th></tr>
+	<tr><th>本編：</th><th><input type="text" name="p_honpen" style="width:75px;"></th></tr>
+</table>
+<br><hr><br>
+<table id="menuTable">
+	<tr><th>種類</th><th>ページ</th><th>章名／節名</th></tr>
+	<tr><th style="text-align:left;"><select name="menu_type[1]"><option value="chapter">章</option></select></th><th><input type="text" name="page[1]" style="width:75px;"></th><th><input type="text" name="menu[1]"></th></tr>
+</table>
+	<input type="button" value="―" onclick="removecolumn()">
+	<input type="button" value="＋" onclick="addcolumn()">
+	<br><br><br><br><br><input type="submit" value="submit">
+</form>
+<script> 
+	var menu_counter = 2;
+	function addcolumn(){
+		var column = "<tr><th style=\"text-align:left;\"><select name=\"menu_type[" + menu_counter + "]\"><option value=\"chapter\">章</option><option value=\"section\">節</option></select></th><th><input type=\"text\" name=\"page[" + menu_counter + "]\" style=\"width:75px;\"></th><th><input type=\"text\" name=\"menu[" + menu_counter + "]\"></th></tr>";
+		document.querySelector("#menuTable").insertAdjacentHTML("beforeend", column);
+		menu_counter++;
+	}
+	function removecolumn(){
+		if(menu_counter > 2){
+			document.querySelectorAll('tbody')[document.querySelectorAll('tbody').length-1].outerHTML='';
+			menu_counter--;
+		}
+	}
+</script>
+</body>
+</html>
