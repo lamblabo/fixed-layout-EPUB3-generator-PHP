@@ -31,8 +31,10 @@ Apacheサーバのhtdocsにフォルダ ”[このフォルダをコピーして
 * 事前に用意した画像データを ”item/image” に入れる
 * ”item2epub.bat” を実行し、EPUBファイルを生成
 * EPUB-CheckerとKindle Previewerで作成したEPUBファイルを確認
-* EPUB-Checker, 参考: https://www.pagina.gmbh/produkte/epub-checker/
-* Kindle Previewer, 参考: https://kdp.amazon.co.jp/ja_JP/help/topic/G202131170
+
+EPUB-Checker, 参考: https://www.pagina.gmbh/produkte/epub-checker/
+
+Kindle Previewer, 参考: https://kdp.amazon.co.jp/ja_JP/help/topic/G202131170
 
 ## ライセンス
 ©lamblabo 2022
